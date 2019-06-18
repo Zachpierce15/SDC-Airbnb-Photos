@@ -43,7 +43,7 @@ class PhotoSlider extends Component {
                   index={index}
                   currentPhotoIndex={currentPhotoIndex}
                   handleClickedPhoto={handleClickedPhoto}
-                  key={photo.url}
+                  key={photo.id}
                 />
               ))
             }

@@ -1,0 +1,619 @@
+2019-06-07 22:59:30.974 PDT [82340] LOG:  listening on IPv6 address "::1", port 5432
+2019-06-07 22:59:30.974 PDT [82340] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-06-07 22:59:30.977 PDT [82340] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-06-07 22:59:30.993 PDT [82341] LOG:  database system was shut down at 2019-06-07 22:59:18 PDT
+2019-06-07 22:59:30.998 PDT [82340] LOG:  database system is ready to accept connections
+2019-06-07 23:00:51.454 PDT [82358] FATAL:  database "zacharypierce" does not exist
+2019-06-08 08:59:47.180 PDT [82837] FATAL:  database "zacharypierce" does not exist
+2019-06-08 10:25:47.039 PDT [82840] ERROR:  column "zach" does not exist at character 44
+2019-06-08 10:25:47.039 PDT [82840] STATEMENT:  INSERT INTO Users(id, username) VALUES (1, zach);
+2019-06-08 11:03:20.991 PDT [82840] ERROR:  syntax error at or near "1" at character 1
+2019-06-08 11:03:20.991 PDT [82840] STATEMENT:  1
+	COPY users(id,username) FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresUsers.csv' DELIMITER ',' CVS HEADER
+	;
+2019-06-08 11:03:29.160 PDT [82840] ERROR:  syntax error at or near "CVS" at character 116
+2019-06-08 11:03:29.160 PDT [82840] STATEMENT:  COPY users(id,username) FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresUsers.csv' DELIMITER ',' CVS HEADER
+	;
+2019-06-08 14:29:28.442 PDT [86744] ERROR:  syntax error at or near "1" at character 1
+2019-06-08 14:29:28.442 PDT [86744] STATEMENT:  1
+	2
+	COPY sample_table
+	FROM 'C:\tmp\sample_data.csv' DELIMITER ',' CSV HEADER;
+2019-06-08 14:31:19.949 PDT [86744] ERROR:  column "id" does not exist at character 26
+2019-06-08 14:31:19.949 PDT [86744] STATEMENT:  SELECT * from user where id=10000;
+2019-06-08 14:53:18.374 PDT [86744] ERROR:  syntax error at or near "User" at character 219
+2019-06-08 14:53:18.374 PDT [86744] STATEMENT:  CREATE TABLE listings (ID INT PRIMARY KEY NOT NULL,Listing INT NOT NULL,Description VARCHAR( 500 ),IsSaved BOOLEAN NOT NULL,Host INT NOT NULL,host_name VARCHAR(50),location INT NOT NULL,FOREIGN KEY ( Host ) REFERENCES User ( ID ),FOREIGN KEY ( location ) REFERENCES host ( ID ),FOREIGN KEY ( host_name ) REFERENCES User ( username ))
+	;
+2019-06-08 14:54:05.689 PDT [86744] ERROR:  syntax error at or near "User" at character 219
+2019-06-08 14:54:05.689 PDT [86744] STATEMENT:  CREATE TABLE listings (ID INT PRIMARY KEY NOT NULL,Listing INT NOT NULL,Description VARCHAR( 500 ),IsSaved BOOLEAN NOT NULL,Host INT NOT NULL,host_name VARCHAR(50),location INT NOT NULL,FOREIGN KEY ( Host ) REFERENCES User ( ID ),FOREIGN KEY ( location ) REFERENCES host ( ID ),FOREIGN KEY ( host_name ) REFERENCES users ( username ))
+	;
+2019-06-08 14:54:46.372 PDT [86744] ERROR:  syntax error at or near "User" at character 219
+2019-06-08 14:54:46.372 PDT [86744] STATEMENT:  CREATE TABLE listings (ID INT PRIMARY KEY NOT NULL,Listing INT NOT NULL,Description VARCHAR( 500 ),IsSaved BOOLEAN NOT NULL,Host INT NOT NULL,host_name VARCHAR(50),location INT NOT NULL,FOREIGN KEY ( Host ) REFERENCES User ( ID ),FOREIGN KEY ( location ) REFERENCES host ( ID ),FOREIGN KEY ( host_name ) REFERENCES users ( username ))
+	;
+2019-06-08 15:08:16.096 PDT [86744] ERROR:  syntax error at or near "j" at character 1
+2019-06-08 15:08:16.096 PDT [86744] STATEMENT:  j
+	CREATE TABLE listings (id INTEGER PRIMARY KEY NOT NULL,
+	description VARCHAR(300),
+	host_id INTEGER NOT NULL,
+	host_name VARCHAR(50),
+	is_saved BOOLEAN,
+	location INTEGER,
+	FOREIGN KEY (host_id) REFERENCES users (id),
+	FOREIGN KEY (host_name) REFERENCES users (username),
+	FOREIGN KEY (location) REFERENCES locations (id);
+	;
+	);
+2019-06-08 15:08:23.548 PDT [86744] ERROR:  there is no unique constraint matching given keys for referenced table "users"
+2019-06-08 15:08:23.548 PDT [86744] STATEMENT:  CREATE TABLE listings (id INTEGER PRIMARY KEY NOT NULL,
+	description VARCHAR(300),
+	host_id INTEGER NOT NULL,
+	host_name VARCHAR(50),
+	is_saved BOOLEAN,
+	location INTEGER,
+	FOREIGN KEY (host_id) REFERENCES users (id),
+	FOREIGN KEY (host_name) REFERENCES users (username),
+	FOREIGN KEY (location) REFERENCES locations (id)
+	);
+2019-06-08 15:16:20.425 PDT [82342] LOG:  checkpoints are occurring too frequently (16 seconds apart)
+2019-06-08 15:16:20.425 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 15:16:57.086 PDT [87795] ERROR:  canceling autovacuum task
+2019-06-08 15:16:57.086 PDT [87795] CONTEXT:  automatic analyze of table "photos.public.users"
+2019-06-08 15:16:57.157 PDT [86744] ERROR:  there is no unique constraint matching given keys for referenced table "users"
+2019-06-08 15:16:57.157 PDT [86744] STATEMENT:  CREATE TABLE listings (id INTEGER PRIMARY KEY NOT NULL,
+	description VARCHAR(300),
+	host_id INTEGER NOT NULL,
+	host_name VARCHAR(50),
+	is_saved BOOLEAN,
+	location INTEGER,
+	FOREIGN KEY (host_id) REFERENCES users (id),
+	FOREIGN KEY (host_name) REFERENCES users (username),
+	FOREIGN KEY (location) REFERENCES locations (id)
+	);
+2019-06-08 15:20:37.048 PDT [86744] ERROR:  there is no unique constraint matching given keys for referenced table "locations"
+2019-06-08 15:20:37.048 PDT [86744] STATEMENT:  CREATE TABLE listings (id INTEGER PRIMARY KEY NOT NULL,
+	description VARCHAR(300),
+	host_id INTEGER NOT NULL,
+	is_saved BOOLEAN,
+	location INTEGER,
+	FOREIGN KEY (host_id) REFERENCES users (id),
+	FOREIGN KEY (location) REFERENCES locations (id)
+	);
+2019-06-08 15:25:59.713 PDT [86744] ERROR:  duplicate key value violates unique constraint "users_pkey"
+2019-06-08 15:25:59.713 PDT [86744] DETAIL:  Key (id)=(2) already exists.
+2019-06-08 15:25:59.713 PDT [86744] CONTEXT:  COPY users, line 3
+2019-06-08 15:25:59.713 PDT [86744] STATEMENT:  COPY users FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresLocations.csv' DELIMITER ',' CSV HEADER;
+2019-06-08 15:51:24.226 PDT [86744] ERROR:  extra data after last expected column
+2019-06-08 15:51:24.226 PDT [86744] CONTEXT:  COPY locations, line 2: "2,Necessitatibus vitae nihil harum et.3Ad dolorem enim tenetur dolore voluptatibus occaecati consequ..."
+2019-06-08 15:51:24.226 PDT [86744] STATEMENT:  COPY locations FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresListings.csv' DELIMITER ',' CSV HEADER;
+2019-06-08 16:07:57.804 PDT [86744] ERROR:  extra data after last expected column
+2019-06-08 16:07:57.804 PDT [86744] CONTEXT:  COPY locations, line 2: "2,Est impedit quia animi.3Vel pariatur aut et error quam quae tempore beatae velit.3Dolor et et haru..."
+2019-06-08 16:07:57.804 PDT [86744] STATEMENT:  COPY locations FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresListings.csv' DELIMITER ',' CSV HEADER;
+2019-06-08 16:10:14.972 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-08 16:10:14.972 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:10:38.223 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-08 16:10:38.223 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:15:02.963 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-08 16:15:02.963 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:15:27.607 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-08 16:15:27.607 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:15:51.624 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-08 16:15:51.624 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:16:17.718 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-08 16:16:17.718 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:16:41.787 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-08 16:16:41.787 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:17:08.835 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-08 16:17:08.835 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:17:37.024 PDT [82342] LOG:  checkpoints are occurring too frequently (29 seconds apart)
+2019-06-08 16:17:37.024 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:18:04.508 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-08 16:18:04.508 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:18:31.848 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-08 16:18:31.848 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:18:54.847 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-08 16:18:54.847 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:19:19.687 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-08 16:19:19.687 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:19:42.714 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-08 16:19:42.714 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:20:05.947 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-08 16:20:05.947 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:20:28.189 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-08 16:20:28.189 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:20:52.745 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-08 16:20:52.745 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:21:55.470 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-08 16:21:55.470 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:22:21.003 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-08 16:22:21.003 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:22:45.805 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-08 16:22:45.805 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:23:11.202 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-08 16:23:11.202 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:23:38.240 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-08 16:23:38.240 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:24:04.107 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-08 16:24:04.107 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:24:28.806 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-08 16:24:28.806 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:24:57.561 PDT [82342] LOG:  checkpoints are occurring too frequently (29 seconds apart)
+2019-06-08 16:24:57.561 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:25:23.220 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-08 16:25:23.220 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:25:48.887 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-08 16:25:48.887 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:26:13.615 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-08 16:26:13.615 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:27:10.068 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-08 16:27:10.068 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:27:38.922 PDT [82342] LOG:  checkpoints are occurring too frequently (28 seconds apart)
+2019-06-08 16:27:38.922 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:28:05.999 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-08 16:28:05.999 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:28:31.431 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-08 16:28:31.431 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:28:58.636 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-08 16:28:58.636 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:29:23.352 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-08 16:29:23.352 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:29:49.984 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-08 16:29:49.984 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:38:31.395 PDT [89096] ERROR:  column "listing" specified more than once
+2019-06-08 16:38:31.395 PDT [89096] STATEMENT:  CREATE TABLE photos (id INTEGER PRIMARY KEY NOT NULL,
+	url VARCHAR(100),
+	listing INTEGER NOT NULL,
+	description VARCHAR(500),
+	is_verified BOOLEAN,
+	listing INTEGER NOT NULL,
+	FOREIGN KEY(listing) REFERENCES listings(id));
+2019-06-08 16:39:35.917 PDT [82342] LOG:  checkpoints are occurring too frequently (28 seconds apart)
+2019-06-08 16:39:35.917 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-08 16:39:53.269 PDT [89096] ERROR:  relation "photos" already exists
+2019-06-08 16:39:53.269 PDT [89096] STATEMENT:  CREATE TABLE photos (id INTEGER PRIMARY KEY NOT NULL,
+	url VARCHAR(100), 
+	description VARCHAR(500),
+	is_verified BOOLEAN,
+	listing INTEGER NOT NULL,
+	FOREIGN KEY(listing) REFERENCES listings(id));
+2019-06-10 11:13:45.521 PDT [89096] ERROR:  syntax error at or near "desrcibe" at character 1
+2019-06-10 11:13:45.521 PDT [89096] STATEMENT:  desrcibe listings
+	;
+2019-06-10 11:13:52.058 PDT [89096] ERROR:  syntax error at or near "describe" at character 1
+2019-06-10 11:13:52.058 PDT [89096] STATEMENT:  describe listings
+	;
+2019-06-10 11:14:03.581 PDT [89096] ERROR:  syntax error at or near "describe" at character 1
+2019-06-10 11:14:03.581 PDT [89096] STATEMENT:  describe listings;
+2019-06-10 11:14:36.569 PDT [89096] ERROR:  syntax error at or near "/" at character 1
+2019-06-10 11:14:36.569 PDT [89096] STATEMENT:  /d listings;
+2019-06-10 12:05:12.441 PDT [89096] ERROR:  syntax error at or near "/" at character 1
+2019-06-10 12:05:12.441 PDT [89096] STATEMENT:  /d photos
+	;
+2019-06-10 12:06:09.835 PDT [89096] ERROR:  SELECT * with no tables specified is not valid at character 24
+2019-06-10 12:06:09.835 PDT [89096] STATEMENT:  EXPLAIN ANALYZE SELECT * where listing=10;
+2019-06-10 12:08:48.094 PDT [89096] ERROR:  relation "listing" does not exist at character 15
+2019-06-10 12:08:48.094 PDT [89096] STATEMENT:  select * from listing;
+2019-06-10 12:09:01.012 PDT [89096] ERROR:  canceling statement due to user request
+2019-06-10 12:09:01.012 PDT [89096] STATEMENT:  select * from listings;
+2019-06-10 12:10:24.792 PDT [89096] ERROR:  syntax error at or near "photos" at character 10
+2019-06-10 12:10:24.792 PDT [89096] STATEMENT:  select * photos where id = 20000000;
+2019-06-10 12:12:37.092 PDT [89096] ERROR:  invalid input syntax for integer: "false"
+2019-06-10 12:12:37.092 PDT [89096] CONTEXT:  COPY listings, line 2, column host_id: "false"
+2019-06-10 12:12:37.092 PDT [89096] STATEMENT:  COPY listings FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresPhotos.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 12:13:02.989 PDT [89096] ERROR:  invalid input syntax for type boolean: "7798668"
+2019-06-10 12:13:02.989 PDT [89096] CONTEXT:  COPY photos, line 2, column is_verified: "7798668"
+2019-06-10 12:13:02.989 PDT [89096] STATEMENT:  COPY photos FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresPhotos.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 12:14:44.626 PDT [89096] ERROR:  invalid input syntax for type boolean: "7798668"
+2019-06-10 12:14:44.626 PDT [89096] CONTEXT:  COPY photos, line 2, column is_verified: "7798668"
+2019-06-10 12:14:44.626 PDT [89096] STATEMENT:  COPY photos FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresPhotos.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 12:15:53.109 PDT [89096] ERROR:  invalid input syntax for type boolean: "7798668"
+2019-06-10 12:15:53.109 PDT [89096] CONTEXT:  COPY photos, line 2, column is_verified: "7798668"
+2019-06-10 12:15:53.109 PDT [89096] STATEMENT:  COPY photos FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresPhotos.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 12:19:10.212 PDT [89096] ERROR:  invalid input syntax for type boolean: "7798668"
+2019-06-10 12:19:10.212 PDT [89096] CONTEXT:  COPY photos, line 2, column is_verified: "7798668"
+2019-06-10 12:19:10.212 PDT [89096] STATEMENT:  COPY photos FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresPhotos.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 12:31:26.210 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-10 12:31:26.210 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:31:48.304 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 12:31:48.304 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:32:08.731 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 12:32:08.731 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:32:29.550 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 12:32:29.550 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:32:50.718 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 12:32:50.718 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:33:10.791 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 12:33:10.791 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:33:32.247 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 12:33:32.247 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:33:53.718 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 12:33:53.718 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:34:15.519 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 12:34:15.519 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:34:37.626 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 12:34:37.626 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:34:59.645 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 12:34:59.645 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:35:21.389 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 12:35:21.389 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:35:50.123 PDT [82342] LOG:  checkpoints are occurring too frequently (29 seconds apart)
+2019-06-10 12:35:50.123 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:37:54.368 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 12:37:54.368 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:38:15.269 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 12:38:15.269 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:38:36.939 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 12:38:36.939 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:38:58.111 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 12:38:58.111 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:40:26.662 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 12:40:26.662 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:40:49.604 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 12:40:49.604 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:41:11.458 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 12:41:11.458 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:41:30.747 PDT [82342] LOG:  checkpoints are occurring too frequently (19 seconds apart)
+2019-06-10 12:41:30.747 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:41:50.636 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 12:41:50.636 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:42:10.453 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 12:42:10.453 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:42:30.592 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 12:42:30.592 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:42:50.469 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 12:42:50.469 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:43:09.210 PDT [82342] LOG:  checkpoints are occurring too frequently (19 seconds apart)
+2019-06-10 12:43:09.210 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:43:26.623 PDT [82342] LOG:  checkpoints are occurring too frequently (17 seconds apart)
+2019-06-10 12:43:26.623 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:43:45.926 PDT [82342] LOG:  checkpoints are occurring too frequently (19 seconds apart)
+2019-06-10 12:43:45.926 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:44:11.264 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-10 12:44:11.264 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:44:34.840 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 12:44:34.840 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:44:57.091 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 12:44:57.091 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:45:18.186 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 12:45:18.186 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:45:39.367 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 12:45:39.367 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 12:45:40.438 PDT [89096] ERROR:  insert or update on table "photos" violates foreign key constraint "photos_listing_fkey"
+2019-06-10 12:45:40.438 PDT [89096] DETAIL:  Key (listing)=(1) is not present in table "listings".
+2019-06-10 12:45:40.438 PDT [89096] STATEMENT:  COPY photos FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresPhotos.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 15:36:05.384 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-10 15:36:05.384 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:36:26.902 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 15:36:26.902 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:36:45.953 PDT [82342] LOG:  checkpoints are occurring too frequently (19 seconds apart)
+2019-06-10 15:36:45.953 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:36:53.184 PDT [89096] ERROR:  canceling statement due to user request
+2019-06-10 15:36:53.184 PDT [89096] CONTEXT:  COPY photos, line 11191927
+2019-06-10 15:36:53.184 PDT [89096] STATEMENT:  COPY photos FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresPhotos.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 15:47:39.970 PDT [89096] ERROR:  canceling statement due to user request
+2019-06-10 15:47:39.970 PDT [89096] CONTEXT:  COPY photos, line 531093
+2019-06-10 15:47:39.970 PDT [89096] STATEMENT:  COPY photos FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresPhotos.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 15:48:21.630 PDT [89096] ERROR:  value too long for type character varying(100)
+2019-06-10 15:48:21.630 PDT [89096] CONTEXT:  COPY photos, line 2, column url: "Eveniet consectetur placeat laudantium blanditiis.3Facilis quo ipsam odit vero quae odio eius volupt..."
+2019-06-10 15:48:21.630 PDT [89096] STATEMENT:  COPY photos FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresListings.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 15:48:42.051 PDT [89096] ERROR:  duplicate key value violates unique constraint "listings_pkey"
+2019-06-10 15:48:42.051 PDT [89096] DETAIL:  Key (id)=(2) already exists.
+2019-06-10 15:48:42.051 PDT [89096] CONTEXT:  COPY listings, line 3
+2019-06-10 15:48:42.051 PDT [89096] STATEMENT:  COPY listings FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresListings.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 15:50:22.633 PDT [89096] ERROR:  cannot drop table listings because other objects depend on it
+2019-06-10 15:50:22.633 PDT [89096] DETAIL:  constraint photos_listing_fkey on table photos depends on table listings
+2019-06-10 15:50:22.633 PDT [89096] HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2019-06-10 15:50:22.633 PDT [89096] STATEMENT:  drop table listings
+	;
+2019-06-10 15:52:39.760 PDT [82342] LOG:  checkpoints are occurring too frequently (19 seconds apart)
+2019-06-10 15:52:39.760 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:52:58.968 PDT [82342] LOG:  checkpoints are occurring too frequently (19 seconds apart)
+2019-06-10 15:52:58.968 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:53:20.590 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 15:53:20.590 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:53:46.358 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-10 15:53:46.358 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:54:06.977 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 15:54:06.977 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:54:24.336 PDT [82342] LOG:  checkpoints are occurring too frequently (18 seconds apart)
+2019-06-10 15:54:24.336 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:54:41.451 PDT [82342] LOG:  checkpoints are occurring too frequently (17 seconds apart)
+2019-06-10 15:54:41.451 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:54:59.085 PDT [82342] LOG:  checkpoints are occurring too frequently (18 seconds apart)
+2019-06-10 15:54:59.085 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:55:16.489 PDT [82342] LOG:  checkpoints are occurring too frequently (17 seconds apart)
+2019-06-10 15:55:16.489 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:55:34.624 PDT [82342] LOG:  checkpoints are occurring too frequently (18 seconds apart)
+2019-06-10 15:55:34.624 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:55:52.811 PDT [82342] LOG:  checkpoints are occurring too frequently (18 seconds apart)
+2019-06-10 15:55:52.811 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:56:10.207 PDT [82342] LOG:  checkpoints are occurring too frequently (18 seconds apart)
+2019-06-10 15:56:10.207 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:56:29.223 PDT [82342] LOG:  checkpoints are occurring too frequently (19 seconds apart)
+2019-06-10 15:56:29.223 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:56:46.922 PDT [82342] LOG:  checkpoints are occurring too frequently (17 seconds apart)
+2019-06-10 15:56:46.922 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:57:03.895 PDT [82342] LOG:  checkpoints are occurring too frequently (17 seconds apart)
+2019-06-10 15:57:03.895 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:57:21.556 PDT [82342] LOG:  checkpoints are occurring too frequently (18 seconds apart)
+2019-06-10 15:57:21.556 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:57:38.388 PDT [82342] LOG:  checkpoints are occurring too frequently (17 seconds apart)
+2019-06-10 15:57:38.388 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:57:55.649 PDT [82342] LOG:  checkpoints are occurring too frequently (17 seconds apart)
+2019-06-10 15:57:55.649 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 15:58:15.805 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 15:58:15.805 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:00:38.737 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-10 16:00:38.737 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:00:57.005 PDT [82342] LOG:  checkpoints are occurring too frequently (19 seconds apart)
+2019-06-10 16:00:57.005 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:02:02.221 PDT [82342] LOG:  checkpoints are occurring too frequently (29 seconds apart)
+2019-06-10 16:02:02.221 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:02:27.990 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-10 16:02:27.990 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:02:52.192 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-10 16:02:52.192 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:03:14.542 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 16:03:14.542 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:03:37.078 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 16:03:37.078 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:03:59.247 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 16:03:59.247 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:04:23.783 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 16:04:23.783 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:04:45.281 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 16:04:45.281 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:05:08.285 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 16:05:08.285 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:05:33.364 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-10 16:05:33.364 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:05:57.436 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 16:05:57.436 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:06:22.310 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-10 16:06:22.310 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:06:43.999 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 16:06:43.999 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:07:06.222 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 16:07:06.222 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:07:30.777 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 16:07:30.777 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:07:53.855 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 16:07:53.855 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:08:15.883 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 16:08:15.883 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:08:39.920 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 16:08:39.920 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:09:03.192 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 16:09:03.192 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:09:29.567 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-10 16:09:29.567 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:09:53.798 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 16:09:53.798 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:10:18.648 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-10 16:10:18.648 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:10:45.734 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-10 16:10:45.734 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:11:12.979 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-10 16:11:12.979 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:11:39.637 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-10 16:11:39.637 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:12:02.928 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 16:12:02.928 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:12:30.191 PDT [82342] LOG:  checkpoints are occurring too frequently (28 seconds apart)
+2019-06-10 16:12:30.191 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:12:55.902 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-10 16:12:55.902 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:13:22.883 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-10 16:13:22.883 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:13:48.474 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-10 16:13:48.474 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:14:16.152 PDT [82342] LOG:  checkpoints are occurring too frequently (28 seconds apart)
+2019-06-10 16:14:16.152 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:14:43.567 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-10 16:14:43.567 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:17:04.489 PDT [82342] LOG:  checkpoints are occurring too frequently (29 seconds apart)
+2019-06-10 16:17:04.489 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:18:04.038 PDT [82342] LOG:  checkpoints are occurring too frequently (28 seconds apart)
+2019-06-10 16:18:04.038 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:18:31.643 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-10 16:18:31.643 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:18:57.534 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-10 16:18:57.534 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:19:25.727 PDT [82342] LOG:  checkpoints are occurring too frequently (28 seconds apart)
+2019-06-10 16:19:25.727 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:19:54.533 PDT [82342] LOG:  checkpoints are occurring too frequently (29 seconds apart)
+2019-06-10 16:19:54.533 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:21:54.759 PDT [82342] LOG:  checkpoints are occurring too frequently (28 seconds apart)
+2019-06-10 16:21:54.759 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 16:58:05.583 PDT [89096] ERROR:  canceling statement due to user request
+2019-06-10 16:58:05.583 PDT [89096] CONTEXT:  SQL statement "SELECT 1 FROM ONLY "public"."listings" x WHERE "id" OPERATOR(pg_catalog.=) $1 FOR KEY SHARE OF x"
+2019-06-10 16:58:05.583 PDT [89096] STATEMENT:  COPY photos FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresPhotos.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 17:07:57.889 PDT [82342] LOG:  checkpoints are occurring too frequently (18 seconds apart)
+2019-06-10 17:07:57.889 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:08:15.950 PDT [82342] LOG:  checkpoints are occurring too frequently (18 seconds apart)
+2019-06-10 17:08:15.950 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:08:35.049 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 17:08:35.049 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:08:55.815 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 17:08:55.815 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:09:16.275 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 17:09:16.275 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:09:36.825 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 17:09:36.825 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:09:57.126 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 17:09:57.126 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:10:17.543 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 17:10:17.543 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:10:38.080 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 17:10:38.080 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:10:58.126 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 17:10:58.126 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:11:22.446 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 17:11:22.446 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:12:23.530 PDT [82342] LOG:  checkpoints are occurring too frequently (28 seconds apart)
+2019-06-10 17:12:23.530 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:12:44.434 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 17:12:44.434 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:13:05.857 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 17:13:05.857 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:13:28.786 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 17:13:28.786 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:13:52.766 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 17:13:52.766 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:14:15.095 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 17:14:15.095 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:14:38.350 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 17:14:38.350 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:15:01.671 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 17:15:01.671 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:15:24.561 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 17:15:24.561 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:15:46.134 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 17:15:46.134 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:16:11.061 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-10 17:16:11.061 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:16:34.507 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 17:16:34.507 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:16:58.806 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 17:16:58.806 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:17:25.785 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-10 17:17:25.785 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:17:52.132 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-10 17:17:52.132 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:18:16.975 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 17:18:16.975 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:18:41.966 PDT [82342] LOG:  checkpoints are occurring too frequently (25 seconds apart)
+2019-06-10 17:18:41.966 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:19:37.588 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-10 17:19:37.588 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 17:20:03.312 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-10 17:20:03.312 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 18:51:28.265 PDT [89096] ERROR:  canceling statement due to user request
+2019-06-10 18:51:28.265 PDT [89096] CONTEXT:  SQL statement "SELECT 1 FROM ONLY "public"."listings" x WHERE "id" OPERATOR(pg_catalog.=) $1 FOR KEY SHARE OF x"
+2019-06-10 18:51:28.265 PDT [89096] STATEMENT:  COPY photos FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresPhotos.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 18:52:56.319 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 18:52:56.319 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 18:53:13.303 PDT [89096] ERROR:  canceling statement due to user request
+2019-06-10 18:53:13.303 PDT [89096] CONTEXT:  COPY photos, line 8375437: "8375436,https://sdc-photos.s3-us-west-1.amazonaws.com/7.jpg,Quam incidunt hic quo voluptas blanditii..."
+2019-06-10 18:53:13.303 PDT [89096] STATEMENT:  COPY photos FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresPhotos.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 18:55:39.495 PDT [98489] ERROR:  canceling autovacuum task
+2019-06-10 18:55:39.495 PDT [98489] CONTEXT:  automatic vacuum of table "photos.public.photos"
+2019-06-10 18:56:54.874 PDT [82342] LOG:  checkpoints are occurring too frequently (26 seconds apart)
+2019-06-10 18:56:54.874 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 18:57:18.350 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 18:57:18.350 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 18:57:42.284 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 18:57:42.284 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 18:58:04.339 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 18:58:04.339 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 18:58:24.991 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 18:58:24.991 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 18:58:42.551 PDT [82342] LOG:  checkpoints are occurring too frequently (18 seconds apart)
+2019-06-10 18:58:42.551 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 18:58:59.818 PDT [82342] LOG:  checkpoints are occurring too frequently (17 seconds apart)
+2019-06-10 18:58:59.818 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 18:59:28.395 PDT [82342] LOG:  checkpoints are occurring too frequently (29 seconds apart)
+2019-06-10 18:59:28.395 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:10:21.981 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 19:10:21.981 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:10:44.872 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 19:10:44.872 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:11:47.898 PDT [82342] LOG:  checkpoints are occurring too frequently (28 seconds apart)
+2019-06-10 19:11:47.898 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:12:14.086 PDT [82342] LOG:  checkpoints are occurring too frequently (27 seconds apart)
+2019-06-10 19:12:14.086 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:12:37.569 PDT [82342] LOG:  checkpoints are occurring too frequently (23 seconds apart)
+2019-06-10 19:12:37.569 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:12:59.189 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 19:12:59.189 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:13:18.460 PDT [82342] LOG:  checkpoints are occurring too frequently (19 seconds apart)
+2019-06-10 19:13:18.460 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:13:39.291 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 19:13:39.291 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:14:00.304 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 19:14:00.304 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:14:22.991 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 19:14:22.991 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:14:41.474 PDT [82342] LOG:  checkpoints are occurring too frequently (19 seconds apart)
+2019-06-10 19:14:41.474 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:15:00.208 PDT [82342] LOG:  checkpoints are occurring too frequently (19 seconds apart)
+2019-06-10 19:15:00.208 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:15:19.307 PDT [82342] LOG:  checkpoints are occurring too frequently (19 seconds apart)
+2019-06-10 19:15:19.307 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:15:41.007 PDT [82342] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2019-06-10 19:15:41.007 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:15:48.062 PDT [89096] ERROR:  canceling statement due to user request
+2019-06-10 19:15:48.062 PDT [89096] CONTEXT:  SQL statement "SELECT 1 FROM ONLY "public"."listings" x WHERE "id" OPERATOR(pg_catalog.=) $1 FOR KEY SHARE OF x"
+2019-06-10 19:15:48.062 PDT [89096] STATEMENT:  COPY photos FROM '/Users/zacharypierce/Desktop/Airbnb-photos/database/postgresPhotos.csv' DELIMITER ',' CSV HEADER;
+2019-06-10 19:16:55.497 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 19:16:55.497 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:17:16.710 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 19:17:16.710 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:23:54.182 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 19:23:54.182 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:24:14.248 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 19:24:14.248 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:24:31.920 PDT [82342] LOG:  checkpoints are occurring too frequently (17 seconds apart)
+2019-06-10 19:24:31.920 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:24:48.991 PDT [82342] LOG:  checkpoints are occurring too frequently (17 seconds apart)
+2019-06-10 19:24:48.991 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:25:06.954 PDT [82342] LOG:  checkpoints are occurring too frequently (18 seconds apart)
+2019-06-10 19:25:06.954 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:25:23.419 PDT [82342] LOG:  checkpoints are occurring too frequently (17 seconds apart)
+2019-06-10 19:25:23.419 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:25:39.393 PDT [82342] LOG:  checkpoints are occurring too frequently (16 seconds apart)
+2019-06-10 19:25:39.393 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:25:55.079 PDT [82342] LOG:  checkpoints are occurring too frequently (16 seconds apart)
+2019-06-10 19:25:55.079 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:26:12.180 PDT [82342] LOG:  checkpoints are occurring too frequently (17 seconds apart)
+2019-06-10 19:26:12.180 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:26:30.437 PDT [82342] LOG:  checkpoints are occurring too frequently (18 seconds apart)
+2019-06-10 19:26:30.437 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:26:46.736 PDT [82342] LOG:  checkpoints are occurring too frequently (16 seconds apart)
+2019-06-10 19:26:46.736 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:27:02.134 PDT [82342] LOG:  checkpoints are occurring too frequently (16 seconds apart)
+2019-06-10 19:27:02.134 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:27:17.661 PDT [82342] LOG:  checkpoints are occurring too frequently (15 seconds apart)
+2019-06-10 19:27:17.661 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:27:33.974 PDT [82342] LOG:  checkpoints are occurring too frequently (16 seconds apart)
+2019-06-10 19:27:33.974 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:27:54.079 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 19:27:54.079 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:28:18.416 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 19:28:18.416 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:28:39.235 PDT [82342] LOG:  checkpoints are occurring too frequently (21 seconds apart)
+2019-06-10 19:28:39.235 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:28:59.306 PDT [82342] LOG:  checkpoints are occurring too frequently (20 seconds apart)
+2019-06-10 19:28:59.306 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:29:23.722 PDT [82342] LOG:  checkpoints are occurring too frequently (24 seconds apart)
+2019-06-10 19:29:23.722 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2019-06-10 19:34:16.181 PDT [89096] ERROR:  syntax error at or near "FOREIGN" at character 36
+2019-06-10 19:34:16.181 PDT [89096] STATEMENT:  ALTER TABLE photos ADD CONSTRAINT  FOREIGN KEY (listing) REFERENCES listings (id) NOT VALID;
+2019-06-10 19:34:26.553 PDT [89096] ERROR:  syntax error at or near "FOREIGN" at character 35
+2019-06-10 19:34:26.553 PDT [89096] STATEMENT:  ALTER TABLE photos ADD CONSTRAINT FOREIGN KEY (listing) REFERENCES listings (id) NOT VALID;
+2019-06-10 19:35:18.964 PDT [89096] ERROR:  column "photos" does not exist at character 8
+2019-06-10 19:35:18.964 PDT [89096] STATEMENT:  select photos where listing=100;
+2019-06-10 19:35:28.108 PDT [89096] ERROR:  syntax error at or near "photos" at character 10
+2019-06-10 19:35:28.108 PDT [89096] STATEMENT:  select * photos where listing=100;
+2019-06-10 19:36:30.491 PDT [89096] ERROR:  canceling statement due to user request
+2019-06-10 19:36:30.491 PDT [89096] STATEMENT:  select * FROM photos where listing=100;
+2019-06-10 19:36:30.494 PDT [99584] FATAL:  terminating connection due to administrator command
+2019-06-10 19:36:30.494 PDT [99584] STATEMENT:  select * FROM photos where listing=100;
+2019-06-10 19:36:30.494 PDT [99583] FATAL:  terminating connection due to administrator command
+2019-06-10 19:36:30.494 PDT [99583] STATEMENT:  select * FROM photos where listing=100;
+2019-06-10 19:36:31.519 PDT [82340] LOG:  background worker "parallel worker" (PID 99584) exited with exit code 1
+2019-06-10 19:36:31.519 PDT [82340] LOG:  background worker "parallel worker" (PID 99583) exited with exit code 1
+2019-06-10 19:42:20.288 PDT [99599] ERROR:  canceling statement due to user request
+2019-06-10 19:42:20.288 PDT [99599] STATEMENT:  select * from photos;
+2019-06-10 19:44:24.626 PDT [99599] ERROR:  canceling statement due to user request
+2019-06-10 19:44:24.626 PDT [99599] STATEMENT:  CREATE INDEX photo_listing_index ON photos (listing);
+2019-06-10 19:44:24.629 PDT [99644] FATAL:  terminating connection due to administrator command
+2019-06-10 19:44:24.629 PDT [99644] STATEMENT:  CREATE INDEX photo_listing_index ON photos (listing);
+2019-06-10 19:44:24.645 PDT [82340] LOG:  background worker "parallel worker" (PID 99644) exited with exit code 1
+2019-06-10 20:39:42.630 PDT [99599] ERROR:  INSERT has more expressions than target columns at character 174
+2019-06-10 20:39:42.630 PDT [99599] STATEMENT:  INSERT INTO photos ( id,url,description,is_verified,listing) VALUES (80000005, 'https://sdc-photos.s3-us-west-1.amazonaws.com/8.jpg', 'This is the best day ever!!', true, 2,000,000);
+2019-06-10 23:26:12.855 PDT [99599] ERROR:  syntax error at or near "photos" at character 10
+2019-06-10 23:26:12.855 PDT [99599] STATEMENT:  select * photos where id = 80000005;
+2019-06-10 23:31:52.189 PDT [99599] ERROR:  syntax error at or near "photos" at character 10
+2019-06-10 23:31:52.189 PDT [99599] STATEMENT:  select * photos where id = 50000000;
+2019-06-10 23:41:16.357 PDT [82342] LOG:  checkpoints are occurring too frequently (29 seconds apart)
+2019-06-10 23:41:16.357 PDT [82342] HINT:  Consider increasing the configuration parameter "max_wal_size".

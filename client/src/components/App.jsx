@@ -46,18 +46,28 @@ class App extends Component {
   getPhotos() {
     axios.get(`/photos/${window.location.href.match(/id\s*=\s*(.*)/)[1]}`)
       .then((response) => {
-        console.log(response.data);
-        const listingObj = response.data[0];
-        const { listingDesc } = listingObj;
-        const { listingPhotos } = listingObj;
-        const { isSaved } = listingObj;
+        const listingPhotos = response.data.rows;
+        console.log(listingPhotos);
+        // const { listingDesc } = listingObj;
+        // const { isSaved } = listingObj;
         this.setState({
-          listingDesc,
           listingPhotos,
-          isSaved,
           currentPhotoIndex: 0,
         });
-      })
+      }).then(axios.get(`/photoListing/${window.location.href.match(/id\s*=\s*(.*)/)[1]}`)
+        .then((response) => {
+          const listing = response.data.rows[0];
+          const { description } = listing;
+          const { is_saved } = listing;
+
+          this.setState({
+            listingDesc: description,
+            isSaved: is_saved,
+          });
+        })
+        .catch((error) => {
+          throw (error);
+        }))
       .catch((error) => {
         throw (error);
       });

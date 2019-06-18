@@ -1,0 +1,35 @@
+config:
+  target: 'http://localhost:3001'
+  processor: './my-functions.js'
+  phases:
+    - duration: 20
+      arrivalRate: 1000
+scenarios:
+  - weight: 10/100
+    flow:
+      - loop:
+        - get:
+            url: '/photos/{{ $randomNumber(1,10000000) }}'
+        - get:
+            url: '/photoListing/{{ $randomNumber(1,10000000) }}'
+        - function: 'generateRandomData'
+        - post:
+            url: '/add-photos'
+            json:
+              listing: "{{ $randomNumber(1,10000000) }}"
+              id: "{{ $randomNumber(90000000, 100000000) }}"
+              photo: {
+                url: "{{ url }}",
+                desc: "{{ desc }}",
+                isVerified: "{{ verified }}"
+              }
+        count: 2
+  - weight: 90/100
+    flow:
+      - loop:
+        - get:
+            url: '/photos/{{ $randomNumber(1,100) }}'
+        - get:
+            url: '/photoListing/{{ $randomNumber(1,10000000) }}'
+        count: 10
+

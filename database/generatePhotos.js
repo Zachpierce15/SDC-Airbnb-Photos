@@ -11,7 +11,7 @@ const generateListingPhotos = () => {
   const usedPhotos = [];
 
   // Generate 5-15 photos per listing.
-  const numberOfPhotos = 15;
+  const numberOfPhotos = 7;
   let counter = 0;
 
   // Add an arbitrary # of photo objects to an array.

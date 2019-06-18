@@ -5,7 +5,13 @@
 npm
 npm-debug.log
 node_modules/
-
+/database/Cassandra/cassandra.csv
+/database/test.csv
+database/Postgres/postgresUsers.csv
+/database/Postgres/postgresLocations.csv
+/database/Postgres/postgresPhotos.csv
+/database/Postgres/postgresListings.csv
+./newrelic.js
 pids
 *.pid
 logs
